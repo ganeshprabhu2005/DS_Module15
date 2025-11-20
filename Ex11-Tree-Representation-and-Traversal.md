@@ -1,41 +1,56 @@
-# Ex11 Tree Representation and Traversal
-## DATE:
+# Ex11 Convert HashSet to ArrayList in Java
+## DATE: 09-09-2025
 ## AIM:
-To write a C function to perform post order traversal of a binary tree.
-
+To convert a collection of distinct integers stored in a HashSet into an ArrayList and display its contents.
 ## Algorithm
-1. Start
-2.Define a function display_postorder() that takes a pointer to the root node of the tree. 
-3. Check if the current node (root_node) is not null.
-4. Recursively call display_postorder() for the left child of the current node. 
-5. Recursively call display_postorder() for the right child of the current node.
-6. After visiting both children, print the value of the current node.
-7. End  
+1. Start the program.
+2. Create a HashSet to store a collection of distinct integers.
+3. Add a few integers to the HashSet.
+4. Create an ArrayList and initialize it with the elements of the HashSet.
+5. Display the elements of both HashSet and ArrayList and End the program.
 
 ## Program:
-```
+```java
 /*
-Program to perform post order traversal of a binary tree.
+Program to To convert a collection of distinct integers stored in a HashSet into an ArrayList and display its contents.
 Developed by: GANESH PRABHU J
 RegisterNumber: 212223220023
+
 */
 
-struct node
-{
-int value;
-struct node*left_child, *right_child;
-};*/
-void display_postorder(struct node*root_node){ if(root_node)
-{
-display_postorder(root_node->left_child); display_postorder(root_node->right_child); printf("%d\n",root_node->value);
+import java.util.*;
+
+public class HashSetToArrayList {
+
+    public static ArrayList<Integer> convertToArrayList(HashSet<Integer> set) {
+        ArrayList<Integer> list = new ArrayList<>(set);
+        return list;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        HashSet<Integer> set = new HashSet<>();
+        for (int i = 0; i < n; i++) {
+            int num = sc.nextInt();
+            set.add(num);
+        }
+
+        ArrayList<Integer> list = convertToArrayList(set);
+        System.out.println("ArrayList contents:");
+        for (int num : list) {
+            System.out.print(num + " ");
+        }
+        sc.close();
+    }
 }
-}
+
 ```
 
 ## Output:
+<img width="524" height="550" alt="image" src="https://github.com/user-attachments/assets/0a328278-4dfa-401b-b137-abc9458d737d" />
 
-<img width="723" height="405" alt="437354782-34f755c6-270d-40a2-9653-aad65d2e2b35" src="https://github.com/user-attachments/assets/8e2e9340-c31e-4bee-aa6c-83d497a5ff11" />
 
 
 ## Result:
-Thus, the function to perform post order traversal of a binary tree is implemented successfully
+The program successfully converts a collection of distinct integers stored in a HashSet into an ArrayList
